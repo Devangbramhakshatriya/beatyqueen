@@ -52,7 +52,7 @@ function Navbar(){
                     </Box>
                 </HStack>
             </Box>
-                <Box  bg="#DD0285" fontSize={["13px","15px","18px", "21px"]} marginTop={["12","3","4","4"]}>
+                <Box  bg="#DD0285" fontSize={["13px","15px","18px", "21px"]} marginTop={["2","3","4","4"]}>
                 <MediaQuery maxWidth={660}>
                     <Box display="flex" justifyContent="space-around" alignItems="center">
                     <NavbarDrawer/>
