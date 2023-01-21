@@ -1,5 +1,5 @@
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-
+import {Link as RouterLink} from "react-router-dom";
 import MediaQuery from "react-responsive"
 import { extendTheme } from '@chakra-ui/react'
 import {SlHandbag} from "react-icons/sl"
@@ -55,7 +55,8 @@ function Home(){
             <Grid templateColumns={['repeat(1,1fr)','repeat(2,1fr)','repeat(3,1fr)']} gap={6}  w="90%" margin="auto" >
         {
             data.map((e)=>(
-                <GridItem key={e.id} onClick={<Navigate to="/productdetails"/>}>
+                <RouterLink to={`/productdetails/${e.id}`}>
+                <GridItem key={e.id}>
                     <Box display="flex" boxShadow="md">
                         <Box>
                             <Image src={e.image}/>
@@ -70,7 +71,8 @@ function Home(){
                             <Button m={["4px","5px","7px","7px"]} w={["150px","120px","130px","150px"]} fontSize={["14px","12px","13px","14px"]} color="white" bg="#DD0285" _hover={{bg:"pink.500"}} gap={2}><SlHandbag/>Add To Cart</Button>
                         </Box>
                     </Box>
-                </GridItem>
+                </GridItem> 
+                </RouterLink>
             ))
         }
         </Grid>

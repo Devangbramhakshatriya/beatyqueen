@@ -5,7 +5,7 @@ function AllRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/productdetails" element={<ProductDetails/>}/>
+            <Route path="/productdetails/:id" element={<ProductDetails/>}/>
         </Routes>
     )
 }
