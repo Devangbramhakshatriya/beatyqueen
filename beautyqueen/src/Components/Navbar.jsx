@@ -43,7 +43,7 @@ const [loading,setLoading]=useState(false)
 
 const fetchData=()=>{
     setLoading(true)
-    axios.get(` http://localhost:8080/mixdata?_q=${text}`)
+    axios.get(` https://beautyqueen1.onrender.com/mixdata?_q=${text}`)
     .then((res)=>setData(res.data))
     .then((res)=>setLoading(false))
 }
