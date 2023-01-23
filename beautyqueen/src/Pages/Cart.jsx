@@ -16,37 +16,38 @@ const theme=extendTheme({breackpoints})
 function Cart(){
     
     const [data,setData]=useState([])
-    const [total,setTotal]=useState(0)
-    const getTotal=()=>{
-        let gTotal=data.reduce((e)=>{
-            // setTotal(total+(+(e.price=e.price.replace('₹',""))))
-            // return (
-            //     (e.price=e.price.replace('₹',""))*e.quantity
+    // const [total,setTotal]=useState(0)
+    // const getTotal=()=>{
+    //     let gTotal=data.reduce((e)=>{
+    //         // setTotal(total+(+(e.price=e.price.replace('₹',""))))
+    //         // return (
+    //         //     (e.price=e.price.replace('₹',""))*e.quantity
                 
-            // )
-            let p= +(e.price.replace('₹',""))
-            return p*e.quantity
-        })
-        setTotal(gTotal)
-        localStorage.setItem("Total",total)
-    }
+    //         // )
+    //         let p= +(e.price.replace('₹',""))
+    //         return p*e.quantity
+    //     })
+    //     setTotal(gTotal)
+    //     localStorage.setItem("Total",total)
+    // }
     // const [quantity,setQuantity]=useState(1)
     useEffect(()=>{
         setData(JSON.parse(localStorage.getItem("cart"))||[])
-        if(data.length==0){
-            setTotal(0)
-            localStorage.setItem("Total",total)
-        }else{
-            getTotal() 
-        }
+        // if(data.length==0){
+        //     setTotal(0)
+        //     localStorage.setItem("Total",total)
+        // }else{
+        //     getTotal() 
+        // }
         
     },[])
-    console.log(total)
+   
 
     const RemoveItem=(e,i)=>{
         data.splice(i,1)
         localStorage.setItem("cart",JSON.stringify(data))
-
+        // setTotal(total-e.price)
+        // localStorage.setItem("Total",total)
         window.location.reload()
     }
     const HandleInc=(val,i)=>{
@@ -54,14 +55,14 @@ function Cart(){
         data[i].quantity=val+1
         localStorage.setItem("cart",JSON.stringify(data))
         setData(JSON.parse(localStorage.getItem("cart"))||[])
-        getTotal()
+        // getTotal()
     }
     const HandleDic=(val,i)=>{
         // setQuantity(quantity+val)
         data[i].quantity=val-1
         localStorage.setItem("cart",JSON.stringify(data))
         setData(JSON.parse(localStorage.getItem("cart"))||[])
-        getTotal()
+        // getTotal()
     }
     return(
         <Box>

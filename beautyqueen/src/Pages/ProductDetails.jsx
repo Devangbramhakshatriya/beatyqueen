@@ -25,7 +25,7 @@ function ProductDetails(){
     const [loading,setLoading]=useState(false)
     const fetchData=()=>{
         setLoading(true)
-        axios.get(`http://localhost:8080/mixdata/${id}`)
+        axios.get(`https://beautyqueen1.onrender.com/mixdata/${id}`)
         .then((res)=>setData(res.data))
         .then((res)=>setLoading(false))
     }
@@ -38,7 +38,7 @@ function ProductDetails(){
     const AddProduct=(e)=>{
         e.quantity=1
         cart.push(e)
-        
+        alert("Product Added")
         localStorage.setItem("cart",JSON.stringify(cart))
         console.log(e)
         

@@ -32,7 +32,7 @@ const categoriesNavbarText={
 const icon={
     marginTop:"5px"
 }
-const Total=JSON.parse(localStorage.getItem("Total"))
+const Total=JSON.parse(localStorage.getItem("Total"))||0
 const LoginStatus=JSON.parse(localStorage.getItem("loginStatus"))
 
 console.log(LoginStatus)

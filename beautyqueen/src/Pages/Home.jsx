@@ -26,7 +26,9 @@ function capitalName(text){
 }
 const theme=extendTheme({breackpoints})
 
+
 function Home(){
+    
     const [data,setData]=useState([]);
     const [loading,setLoading]=useState(false)
     const fetchData=()=>{
@@ -46,15 +48,11 @@ function Home(){
         nav(`/productdetails/${id}`)
     }
     const AddProduct=(e)=>{
-        e.stopPropagation()
-        if(e.id==cart.incude(e.id)){
-            alert()
-        }else{
-            cart.push(e)
+        e.quantity=1
+        cart.push(e)
         localStorage.setItem("cart",JSON.stringify(cart))
-        }
+        let p= +(e.price.replace('₹',""))
         
-        console.log(e)
     }
 
     return(
@@ -103,8 +101,6 @@ function Home(){
         }
         </Grid>        
         }
-        
-        
         
         <Box mt={["5px","6px","8px","10px"]}>
             <Image m="auto" src="https://www.beautybebo.com/pub/media/ads/1599-Forent-banner-4.gif" alt=""/>
